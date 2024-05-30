@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { Product } from 'src/app/core/models/product';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from '../../../services/product.service';
 import { LoadingComponent } from '../loading/loading.component';
 import { ProductFilterPipe } from 'src/app/core/pipes/product-filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { ProductPipesModule } from 'src/app/core/pipes/product-pipes.module';
+import { ProductPipesModule } from '../../../core/pipes/product-pipes.module';
 import { SkeletonComponent } from '../skeleton/skeleton.component';
 
 @Component({

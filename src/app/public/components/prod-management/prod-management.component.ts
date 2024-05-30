@@ -7,7 +7,7 @@ import { firstValueFrom } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingComponent } from '../loading/loading.component';
 import { CustomValidators } from './future-date.validator';
-import { Message, MessageService, MessageType } from 'src/app/services/message.service';
+import { Message, MessageService, MessageType } from '../../../services/message.service';
 
 @Component({
   standalone: true,
@@ -39,6 +39,7 @@ export class ProdManagementComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    console.log(this.route);
     const dateReleaseControl = this.productForm.get('date_release');
 
     if (dateReleaseControl) {
@@ -60,20 +61,21 @@ export class ProdManagementComponent implements OnInit{
 
     this.route.queryParams.subscribe(params => {
 
+
       if (params['data']) {
         const base64String = params['data'];
-        const jsonString = atob(base64String); // Decodifica Base64 a JSON
+        const jsonString = atob(base64String); 
         this.params = JSON.parse(jsonString);
         this.productForm.patchValue(this.params);
         console.log(this.params);
-        // Ahora puedes usar el objeto 'acc' como lo necesites
+
       }
 
       // this.params = params;
       console.log(this.params); 
       // this.productForm.patchValue(this.params);
 
-      if (this.params.id) {
+      if (this.params) {
         this.productForm.get('id')?.disable();
       } else {
         this.productForm.get('id')?.enable();
@@ -95,11 +97,13 @@ export class ProdManagementComponent implements OnInit{
       return;
     }
 
-    if (this.params.id) {
+    
+    if (this.params) {
       console.log('entrando 1');
       this.update(this.productForm.getRawValue())
     }else{
       console.log('entrando 2');
+      // this.verification(this.productForm.get('id') as any);
       this.create(this.productForm.getRawValue());
     }
 
@@ -155,10 +159,11 @@ export class ProdManagementComponent implements OnInit{
         this.showMessage('El id ya existe', MessageType.Error, 'Error');
       }
       this.validationInput = resp;
-
+      return;
       
-    } catch (error) {
+    } catch (error:any) {
       console.log(error);
+      this.showMessage(error, MessageType.Error, 'Error');
 
       
     }

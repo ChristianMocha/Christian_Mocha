@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
 import { Product } from '../core/models/product';
 
 @Injectable({
@@ -8,7 +7,7 @@ import { Product } from '../core/models/product';
 })
 export class ProductService {
 
-  private url = environment.urlServer;
+  private url = 'http://localhost:3002/bp';
 
   constructor(private http: HttpClient) { 
   }
