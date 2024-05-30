@@ -1,0 +1,39 @@
+.skeleton-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%; 
+  }
+  
+  .skeleton-header,
+  .skeleton-footer {
+    height: 20px;
+    background-color: #f0f0f0;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-content {
+    margin-top: 10px;
+  }
+  
+  .skeleton-row {
+    height: 20px;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  

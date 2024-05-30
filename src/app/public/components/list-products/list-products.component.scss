@@ -1,0 +1,220 @@
+.table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.data-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.data-table th,
+.data-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  border-left: 1px solid #ddd;
+  text-align-last: center;
+
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+}
+
+.pagination {
+  margin-top: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  flex-grow: 1;
+}
+
+.add-button {
+  margin-left: 10px;
+  height: 30px;
+  background: rgb(254 231 96);
+  border: solid 1px rgb(254 231 96);
+  color: rgb(14, 26, 74);
+}
+
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown button {
+  border: none;
+  background: none;
+}
+
+.buttonCursor {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  border: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 40%;
+  height: 20%;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.show-modal-button {
+  margin: 20px;
+}
+
+.modal-overlay.show {
+  display: block;
+}
+
+
+
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+
+.footerTable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination {
+  margin-left: auto;
+}
+
+.tableBody {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.icon-background {
+  background-color: #b0b0b0;
+  border-radius: 50%;
+  padding: 1px;
+  color: white;
+}
+
+
+p{
+  padding-bottom: 30px;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+
+}
+
+.confirm{
+  background: rgb(254 231 96);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  color: rgb(14, 26, 74);
+}
+
+button.cancelar {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+button.cancelar:hover {
+  background-color: #e0e0e0;
+}
+
+button.confirmar {
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+button.confirmar:hover {
+  background-color: #fdd835;
+}

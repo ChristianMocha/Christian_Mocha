@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    place-content: center;
+    background-color: #fff; /* Color de fondo de la cabecera */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-image: url('https://img.freepik.com/vector-premium/icono-dinero-blanco-negro_755164-15447.jpg');
+    background-size: cover;
+    margin-right: 10px;
+}
+
+h1 {
+    color: rgb(14,26,74) !important;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+}

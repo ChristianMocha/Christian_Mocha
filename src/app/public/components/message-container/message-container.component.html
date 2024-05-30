@@ -1,0 +1,6 @@
+<div class="message-container">
+    <div *ngFor="let message of messages" class="message" [ngClass]="message.severity">
+      <strong>{{ message.summary }}</strong> {{ message.detail }}
+    </div>
+  </div>
+  

@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="contet">
+
+        <div class="form-title">Formulario de Registro</div>
+            <hr>
+            <div class="form-container">
+                <form [formGroup]="productForm">
+                    <div class="form-group">
+                        <div>
+                            <label for="id">ID</label>
+                            <input type="text" id="id" name="id" formControlName="id" [ngClass]="{'error-border': productForm.controls.id.errors && productForm.controls.id.touched}" [ngClass]="{'error-border': validationInput}" required (blur)="verification($event)">
+                            <small class="labelError" *ngIf="productForm.controls.id.errors?.['required'] && productForm.controls.id.touched">
+                                El Id es requerido.
+                            </small>
+                            <small class="labelError" *ngIf="validationInput">
+                                El Id ya existe.
+                            </small>
+                            <small class="labelError" *ngIf="productForm.controls.id.errors?.['minlength'] && productForm.controls.id.touched">
+                                El Id debe tener al menos 3 caracteres.
+                              </small>
+                              <small class="labelError" *ngIf="productForm.controls.id.errors?.['maxlength'] && productForm.controls.id.touched">
+                                El Id no debe tener más de 10 caracteres.
+                              </small>
+                        </div>
+                        <div>
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" formControlName="name" [ngClass]="{'error-border': productForm.controls.name.errors && productForm.controls.name.touched}" required>
+                            <small class="labelError" *ngIf="productForm.controls.name.errors?.['required'] && productForm.controls.name.touched">
+                                El nombre es requerido.
+                            </small>
+
+                            <small class="labelError" *ngIf="productForm.controls.name.errors?.['minlength'] && productForm.controls.name.touched">
+                                El nombre debe tener al menos 5 caracteres.
+                              </small>
+                              <small class="labelError" *ngIf="productForm.controls.name.errors?.['maxlength'] && productForm.controls.name.touched">
+                                El Id no debe tener más de 100 caracteres.
+                              </small>
+                        </div>
+                        <div>
+                            <label for="description">Descripción</label>
+                            <input type="text" id="description" name="description" formControlName="description" [ngClass]="{'error-border': productForm.controls.description.errors && productForm.controls.description.touched}" required>
+                            <small class="labelError" *ngIf="productForm.controls.description.errors?.['required'] && productForm.controls.description.touched">
+                                La descripción es requerida.
+                            </small>
+                            <small class="labelError" *ngIf="productForm.controls.description.errors?.['minlength'] && productForm.controls.description.touched">
+                                La descripción debe tener al menos 10 caracteres.
+                              </small>
+                              <small class="labelError" *ngIf="productForm.controls.description.errors?.['maxlength'] && productForm.controls.description.touched">
+                                La descripción no debe tener más de 200 caracteres.
+                              </small>
+                        </div>
+                        <div>
+                            <label for="logo">Logo</label>
+                            <input type="text" id="logo" name="logo" formControlName="logo" [ngClass]="{'error-border': productForm.controls.logo.errors && productForm.controls.logo.touched}" required>
+                            <small class="labelError" *ngIf="productForm.controls.logo.errors?.['required'] && productForm.controls.logo.touched">
+                                El logo es requerido.
+                            </small>
+                        </div>
+                        <div>
+                            <label for="release-date">Fecha de Liberación</label>
+                            <input type="date" id="release-date" name="release-date" formControlName="date_release" [ngClass]="{'error-border': productForm.controls.date_release.errors && productForm.controls.date_release.touched}" required>
+                            <small class="labelError" *ngIf="productForm.controls.date_release.errors?.['required'] && productForm.controls.date_release.touched">
+                                La fecha de liberación es requerida.
+                            </small>
+                            <small class="labelError" *ngIf="productForm.get('date_release')?.errors?.['futureDate']">La fecha debe ser hoy o mayor a la fecha actual.</small>
+
+
+                        </div>
+                        <div>
+                            <label for="review-date">Fecha de Revisión</label>
+                            <input type="date" id="review-date" name="review-date" formControlName="date_revision" [ngClass]="{'error-border': productForm.controls.date_revision.errors && productForm.controls.date_revision.touched}" required>
+                            <small class="labelError" *ngIf="productForm.controls.date_revision.errors?.['required'] && productForm.controls.date_revision.touched">
+                                La fecha de revisión es requerida.
+                            </small>
+                            <div class="labelError" *ngIf="productForm.get('date_revision')?.hasError('oneYearAfter')">
+                                La fecha de revisión debe ser exactamente un año después de la fecha de liberación.
+                              </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="form-buttons">
+                    <button class="reset" type="reset" (click)="reset()">Reiniciar</button>
+                    <button class="submit" type="submit" (click)="onSubmit()">
+                        <app-loading *ngIf="loading"></app-loading>
+                        <span *ngIf="!loading">
+                            Enviar
+                        </span>  
+                    </button>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+

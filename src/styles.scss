@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    padding-top: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: rgb(241,244,248);
+    min-height: 85vh; /* Asegura que el contenedor tenga al menos el 100% de la altura de la ventana */
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+      min-height: 87vh;
+    }
+  }
+  
+
+.labelError {
+    color: #fd2339;
+}
+
+.error-border {
+    border: 1px solid red;
+}
+
+input{
+    height: 25px;
+    border-radius: 5px;
+    border: solid #b1b1b1 1px;
+    padding-left: 5px;
+}

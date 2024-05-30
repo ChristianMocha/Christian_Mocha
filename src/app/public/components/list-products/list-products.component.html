@@ -1,0 +1,100 @@
+<div class="container">
+
+  <div class="containerTable" *ngIf="!loadingData">
+    <div class="header">
+      <div class="search">
+        <div class="search">
+          <input type="text" placeholder="Buscar producto..." [(ngModel)]="searchTerm" />
+        </div>
+        
+      </div>
+      <!-- <button class="add-button" (click)="pm()">Agregar</button> -->
+      <button (click)="pm()" class="modal-close-button buttonCursor confirm">Agregar</button>
+    </div>
+  
+    <br />
+
+    <div class="tableBody">
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Logo</th>
+              <th>Nombre del Producto</th>
+              <th>Descripción <i class="fas fa-exclamation-circle icon-background"></i></th>
+              <th>Fecha de Liberación <i class="fas fa-exclamation-circle icon-background"></i></th>
+              <th>Fecha de Reestructuración <i class="fas fa-exclamation-circle icon-background"></i></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let acc of lstProducts | productFilter: searchTerm">
+              <td>
+                <img class="img" [src]="acc.logo" (error)="acc.logo = './assets/img/noimage.jpg'">
+              </td>
+              <td>{{acc.name}}</td>
+              <td>{{acc.description}}</td>
+              <td>{{acc.date_release | date: 'dd/MM/YYYY' }}</td>
+              <td>{{acc.date_revision | date: 'dd/MM/YYYY' }}</td>
+              <td>
+                <div class="dropdown">
+                  <button class="buttonCursor">⋮</button>
+                  <div class="dropdown-content">
+                    <a  (click)="editItem(acc)" class="buttonCursor">Editar</a>
+                    <a (click)="deleteItem(acc)" class="buttonCursor">Eliminar</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+    
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="footerTable">
+    
+        <small>{{lstProducts.length}} Resultados</small>
+    
+        <div class="pagination">
+          <select (change)="onPageSizeChange($event)">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+    
+          
+        </div>
+        
+      </div>
+    </div>
+  
+  </div>
+
+  <app-skeleton *ngIf="loadingData"></app-skeleton >
+
+</div>
+
+
+
+<div *ngIf="displayModal" class="modal-overlay" [ngClass]="{ show: displayModal }">
+  <div class="modal">
+    <span (click)="closeModal()" class="close">&times;</span>
+    <div class="modal-content">
+      <p>
+        ¿Estás seguro de eliminar el producto {{productSelect.name}}?
+      </p>
+
+      <hr>
+
+      <div class="buttons">
+        <button (click)="closeModal()" class="modal-close-button buttonCursor">Cancelar</button>
+        <button (click)="confirmDelete()" class="modal-close-button buttonCursor confirm">
+          <app-loading *ngIf="loading"></app-loading>
+          <span *ngIf="!loading">Confirmar</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
