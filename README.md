@@ -2,7 +2,7 @@
 
 Este proyecto está realizado con Angular.
 
-#Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto
 
 Siga estos pasos para ejecutar el proyecto localmente:
 
@@ -12,10 +12,10 @@ Siga estos pasos para ejecutar el proyecto localmente:
 4. Correr el proyecto con el comando "ng serve"
 6. Se abrirá el proyecto en el puerto "http://localhost:4200"
 
-#URL Base
+## URL Base
 Url Base: http://localhost:4200
 
-#Ejecución de pruebas
+## Ejecución de pruebas
 
 Para ejecutar las pruebas unitarias, siga estos pasos:
 
