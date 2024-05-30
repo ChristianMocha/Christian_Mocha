@@ -1,27 +1,23 @@
-# Products
+#Documentación
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+Este proyecto está realizado con Angular.
 
-## Development server
+## Cómo ejecutar el proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Siga estos pasos para ejecutar el proyecto localmente:
 
-## Code scaffolding
+1. Abrir el terminar y clonar el proyecto mediante este comando "git clone https://github.com/ChristianMocha/Christian_Mocha.git".
+2. Abrir un terminal apuntando al proyecto clonado.
+3. Instalar las dependencias con "npm install"
+4. Correr el proyecto con el comando "ng serve"
+6. Se abrirá el proyecto en el puerto "http://localhost:4200"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## URL Base
+Url Base: http://localhost:4200
 
-## Build
+## Ejecución de pruebas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para ejecutar las pruebas unitarias, siga estos pasos:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Abrir un terminal apuntando a la raiz del proyecto clonado.
+2. Correr el proyecto con el comando "npm run test:watch"
